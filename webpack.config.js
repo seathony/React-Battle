@@ -27,9 +27,9 @@ const common = {
     {
       // Test expects a RegExp! Note the slashes!
       test: /\.css$/,
-      loaders: ['style', 'css'],
+      loaders: ['style', 'css?modules', 'sass'],
       // Include accepts either a path or an array of paths.
-      include: PATHS.app
+      include: [PATHS.app, __dirname,'./node_modules/react-flexbox-grid'],
     },
     // Set up jsx. This accepts js too thanks to RegExp
     {

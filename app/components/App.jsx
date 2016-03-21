@@ -1,8 +1,11 @@
-import React from 'react';
-import Note from './Note.jsx';
+import React from 'react'
 
-export default class App extends React.Component {
+export default class HelloWorld extends React.Component {
   render() {
-    return <Note />;
+    return (
+      <div>
+        Hello World!
+      </div>
+    )
   }
 }
