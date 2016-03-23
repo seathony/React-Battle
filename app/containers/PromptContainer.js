@@ -7,23 +7,23 @@ import Prompt from '../components/Prompt';
 export default class PromptContainer extends React.Component {
   static contextTypes = {
     router: React.PropTypes.object.isRequired,
-  }
+  };
 
   constructor(props, context) {
     super(props, context);
-    this.state = {username: ''};
+    this.state = { username: '' };
     context.router;
   }
 
   handleUpdateUser(e) {
-    this.setState({username: e.target.value});
+    this.setState({ username: e.target.value });
     console.log('we in');
   }
 
   handleSubmitUser(e) {
     e.preventDefault();
     let username = this.state.username;
-    this.setState({username: ''});
+    this.setState({ username: '' });
 
     if (this.props.routeParams.playerOne) {
       console.log('this.context');
