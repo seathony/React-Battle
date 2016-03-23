@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid/lib/index';
 import TextField from 'material-ui/lib/text-field';
 import RaisedButton from 'material-ui/lib/raised-button';
+import Prompt from '../components/Prompt';
 
 export default class PromptContainer extends React.Component {
   static contextTypes = {
@@ -14,12 +15,12 @@ export default class PromptContainer extends React.Component {
     context.router;
   }
 
-  onUpdateUser(e) {
+  handleUpdateUser(e) {
     this.setState({username: e.target.value});
     console.log('we in');
   }
 
-  onSubmitUser(e) {
+  handleSubmitUser(e) {
     e.preventDefault();
     let username = this.state.username;
     this.setState({username: ''});
@@ -41,33 +42,11 @@ export default class PromptContainer extends React.Component {
 
   render() {
     return (
-      <Grid>
-        <Row center='xs'>
-          <Col xs={4} >
-            <h1> {this.props.route.header} </h1>
-          <Col xs={4}/>
-          <form onSubmit={this.onSubmitUser.bind(this)}>
-            <div>
-              <TextField
-                hintText='GitHub username'
-                floatingLabelText='Enter name'
-                onChange={this.onUpdateUser.bind(this)}
-                value={this.state.username}
-                type='text'
-                />
-            </div>
-          <Col xs={4}/>
-            <div>
-              <RaisedButton
-              label='Click me'
-              secondary={true}
-              type='submit'
-              />
-            </div>
-            </form>
-          </Col>
-        </Row>
-      </Grid>
+      <Prompt
+        onSubmitUser={this.handleSubmitUser.bind(this)}
+        onUpdateUser={this.handleUpdateUser.bind(this)}
+        header={this.props.route.header}
+        username={this.state.username}/>
     );
   }
 }
