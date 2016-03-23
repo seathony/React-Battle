@@ -13,8 +13,8 @@ export default class Home extends React.Component {
           <Col xs={4}/>
             <p>Some fancy shit</p>
           <Col xs={4}/>
-            <Link to='/playerOne'> 
-              <RaisedButton 
+            <Link to='/playerOne'>
+              <RaisedButton
               label="Get started"
               secondary={true}
               />
@@ -25,4 +25,3 @@ export default class Home extends React.Component {
     )
   }
 }
-
