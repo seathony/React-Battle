@@ -41,5 +41,4 @@ Prompt.propTypes = {
   onUpdateUser: PropTypes.func.isRequired,
   onSubmitUser: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
-
 };

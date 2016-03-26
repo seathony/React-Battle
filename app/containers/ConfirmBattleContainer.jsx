@@ -14,9 +14,15 @@ export default class ConfirmBattleContainer extends React.Component {
     };
   }
 
+  componentDidMount() {
+    let query = this.props.location.query;
+    console.log('Query', query);
+  }
+
   render() {
     return (
-      <ConfirmBattle />
+      <ConfirmBattle isLoading={this.state.isLoading}
+        playersInfor={this.state.playersInfo} />
     );
   }
 }

@@ -1,5 +1,4 @@
 import './main.css';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import HelloWorld from './components/App.jsx';
@@ -25,7 +24,7 @@ class HelloUniverse extends React.Component {
 
 class ProfilePic extends React.Component {
   render() {
-    return <img src={this.props.imageUrl} style={{height: 100, width:100}} />;
+    return <img src={this.props.imageUrl} style={{ height: 100, width:100 }} />;
   }
 }
 
@@ -37,7 +36,7 @@ class Link extends React.Component {
   render() {
     return (
       <span
-        style={{color: 'red', cursor: 'pointer'}}
+        style={{ color: 'red', cursor: 'pointer' }}
         onClick={this.changeUrl}>
         {/*renders everything between tag*/}
         {this.props.children}
