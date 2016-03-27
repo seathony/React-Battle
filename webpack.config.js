@@ -17,7 +17,7 @@ const common = {
   // '' is needed to allow imports without an extension.
   // Note the .'s before extension as it will fail to match without!!
   resolve: {
-    extensions:['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx'],
   },
   output: {
     path: PATHS.build,
@@ -25,26 +25,26 @@ const common = {
   },
   module: {
     loaders: [
-    {
-      // Test expects a RegExp! Note the slashes!
-      test: /\.css$/,
-      loaders: ['style', 'css?modules', 'sass', 'eslint'],
+      {
+        // Test expects a RegExp! Note the slashes!
+        test: /\.css$/,
+        loaders: ['style', 'css?modules', 'sass'],
 
-      // Include accepts either a path or an array of paths.
-      include: [PATHS.app, __dirname, './node_modules/react-flexbox-grid'],
-    },
+        // Include accepts either a path or an array of paths.
+        include: [PATHS.app, __dirname, './node_modules/react-flexbox-grid'],
+      },
 
     // Set up jsx. This accepts js too thanks to RegExp
-    {
-      test: /\.jsx?$/,
+      {
+        test: /\.jsx?$/,
 
-      // enable caching for improved performance during development
-      // It uses default OS directory by default. If you need somehting
-      // more custom, pass a path to it. I.e., babel?cacheDirectory=<path>
-      loaders: ['babel?cacheDirectory'],
-      include: PATHS.app,
-    },
-  ],
+        // enable caching for improved performance during development
+        // It uses default OS directory by default. If you need somehting
+        // more custom, pass a path to it. I.e., babel?cacheDirectory=<path>
+        loaders: ['babel?cacheDirectory'],
+        include: PATHS.app,
+      },
+    ],
   },
 };
 
@@ -73,8 +73,8 @@ if (TARGET === 'start' || !TARGET) {
     plugins: [
       new webpack.HotModuleReplacementPlugin(),
       new webpack.ProvidePlugin({
-    fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
-  }),
+        fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+      }),
     ],
   });
 }
