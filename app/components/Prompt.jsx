@@ -2,7 +2,8 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid/lib/index';
 import TextField from 'material-ui/lib/text-field';
 import RaisedButton from 'material-ui/lib/raised-button';
-let PropTypes = React.PropTypes;
+
+const PropTypes = React.PropTypes;
 
 export default function Prompt(props) {
   return (

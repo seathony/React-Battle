@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/lib/raised-button';
 import { Grid, Row, Col } from 'react-flexbox-grid/lib/index';
 import Card from 'material-ui/lib/card/card';
 import { Router, Route, Link, IndexRoute, hasHistory } from 'react-router';
+import UserDetails from './UserDetails';
 
 const PropTypes = React.PropTypes;
 
@@ -25,13 +26,13 @@ export default function ConfirmBattle(props) {
           <Col xs={5}>
             <Card>
               <h3>Player 1</h3>
-              {puke(props.playersInfo[0])}
+              <UserDetails info={props.playersInfo[0]} />
             </Card>
           </Col>
           <Col xs={5}>
             <Card>
               <h3>Player 2</h3>
-              {puke(props.playersInfo[1])}
+              <UserDetails info={props.playersInfo[1]} />
             </Card>
           </Col>
         </Row>
