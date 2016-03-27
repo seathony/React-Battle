@@ -3,5 +3,10 @@
 }
 
 body {
-  background: white;
+  background: #FAFAFA;
+}
+
+.showdown {
+  position: relative;
+  padding-top: 500px;
 }

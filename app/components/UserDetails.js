@@ -7,7 +7,7 @@ export default function UserDetails(user) {
   return (
     <div>
       {!!user.score && <ListItem><h3>Score: {user.score}</h3></ListItem>}
-      <ListItem><img src={user.info.avatar_url}/></ListItem>
+      <ListItem><img src={user.info.avatar_url} /></ListItem>
       {user.score && <ListItem>Name: {user.info.name}</ListItem>}
       <ListItem>Username: {user.info.login}</ListItem>
       {user.info.location && <ListItem>location: {user.info.location}</ListItem>}

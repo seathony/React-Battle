@@ -8,26 +8,26 @@ const PropTypes = React.PropTypes;
 export default function Prompt(props) {
   return (
     <Grid>
-      <Row center='xs'>
+      <Row center="xs">
         <Col xs={4} >
           <h1> {props.header} </h1>
-        <Col xs={4}/>
+        <Col xs={4} />
         <form onSubmit={props.onSubmitUser}>
           <div>
             <TextField
-              hintText='GitHub username'
-              floatingLabelText='Enter name'
+              hintText="GitHub username"
+              floatingLabelText="Enter name"
               onChange={props.onUpdateUser}
               value={props.username}
-              type='text'
-              />
+              type="text"
+            />
           </div>
-        <Col xs={4}/>
+        <Col xs={4} />
           <div>
             <RaisedButton
-            label='Click me'
-            secondary={true}
-            type='submit'
+              label="Click me"
+              secondary
+              type="submit"
             />
           </div>
           </form>

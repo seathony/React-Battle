@@ -7,16 +7,16 @@ export default class Home extends React.Component {
   render() {
     return (
       <Grid>
-        <Row center='xs'>
-          <Col xs={4} >
+        <Row center="xs">
+          <Col xs={4}>
             <h1>GitHub Battle</h1>
-          <Col xs={4}/>
+          <Col xs={4} />
             <p>Some fancy shit</p>
-          <Col xs={4}/>
-            <Link to='/playerOne'>
+          <Col xs={4} />
+            <Link to="/playerOne">
               <RaisedButton
-              label='Get started'
-              secondary={true}
+                label="Get started"
+                secondary
               />
             </Link>
           </Col>

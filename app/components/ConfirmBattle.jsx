@@ -5,6 +5,8 @@ import { Grid, Row, Col } from 'react-flexbox-grid/lib/index';
 import Card from 'material-ui/lib/card/card';
 import { Router, Route, Link, IndexRoute, hasHistory } from 'react-router';
 import UserDetails from './UserDetails';
+import UserDetailsWrapper from './UserDetailsWrapper';
+import styles from '../styles/styles';
 
 const PropTypes = React.PropTypes;
 
@@ -17,41 +19,43 @@ export default function ConfirmBattle(props) {
     props.isLoading === true
     ? <p> Loading! </p>
     : <Grid>
-        <Row center='xs'>
+        <Row center="xs">
           <Col xs={4} >
             <h1>Confirm Players</h1>
           </Col>
         </Row>
-        <Row center='xs'>
+        <Row center="xs">
           <Col xs={5}>
-            <Card>
-              <h3>Player 1</h3>
+            <UserDetailsWrapper header="Player 1">
               <UserDetails info={props.playersInfo[0]} />
-            </Card>
+            </UserDetailsWrapper>
           </Col>
           <Col xs={5}>
-            <Card>
-              <h3>Player 2</h3>
+            <UserDetailsWrapper header="Player 2">
               <UserDetails info={props.playersInfo[1]} />
-            </Card>
+            </UserDetailsWrapper>
           </Col>
         </Row>
-        <Row center='xs'>
+        <Row center="xs">
           <Col xs={4}>
-            <RaisedButton
-            label='Initiate Battle!'
-            secondary={true}
-            onClick={props.onInitiateBattle}
-            />
-          </Col>
-        </Row>
-        <Row center='xs'>
-          <Col xs={4}>
-            <Link to='/playerOne'>
+            <div style={styles.space}>
               <RaisedButton
-              label='Reselect Players'
-              primary={true}
+                label="Initiate Battle!"
+                secondary
+                onClick={props.onInitiateBattle}
               />
+          </div>
+          </Col>
+        </Row>
+        <Row center="xs">
+          <Col xs={4}>
+            <Link to="/playerOne">
+              <div style={styles.space}>
+                <RaisedButton
+                  label="Reselect Players"
+                  primary
+                />
+              </div>
             </Link>
           </Col>
         </Row>
