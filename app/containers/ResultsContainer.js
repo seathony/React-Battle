@@ -8,7 +8,7 @@ export default class ResultsContainer extends React.Component {
     super(props);
     this.state = {
       isLoading: true,
-      playersInfo: [],
+      scores: [],
     };
   }
 
@@ -26,7 +26,7 @@ export default class ResultsContainer extends React.Component {
       <Results
         isLoading={this.state.isLoading}
         playersInfo={this.props.location.state.playersInfo}
-        score={this.state.scores}
+        scores={this.state.scores}
       />
     );
   }

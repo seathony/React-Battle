@@ -7,9 +7,9 @@ const PropTypes = React.PropTypes;
 export default function UserDetails(user) {
   return (
     <div>
-      {!!user.score && <ListItem><h3>Score: {user.score}</h3></ListItem>}
+      {!!user.scores && <ListItem><h3>Score: {user.scores}</h3></ListItem>}
       <ListItem><Avatar src={user.info.avatar_url} size={300} /></ListItem>
-      {user.score && <ListItem>Name: {user.info.name}</ListItem>}
+      {user.scores && <ListItem>Name: {user.info.name}</ListItem>}
       <ListItem>Username: {user.info.login}</ListItem>
       {user.info.location && <ListItem>location: {user.info.location}</ListItem>}
       {user.info.company && <ListItem>company: {user.info.company}</ListItem>}
@@ -22,7 +22,7 @@ export default function UserDetails(user) {
 }
 
 UserDetails.propTypes = {
-  score: PropTypes.number,
+  scores: PropTypes.number,
   info: PropTypes.shape({
     avatar_url: PropTypes.string.isRequired,
     blog: PropTypes.string,

@@ -39,7 +39,7 @@ function getPlayersData(player) {
   );
 }
 
-function calculateScores(players) {
+function calculatescores(players) {
   return [
     players[0].followers * 3 + players[0].totalStars,
     players[1].followers * 3 + players[1].totalStars,
@@ -72,7 +72,7 @@ export default {
     let playerTwoData = getPlayersData(players[1]);
 
     return axios.all([playerOneData, playerTwoData])
-      .then(calculateScores)
+      .then(calculatescores)
       .catch(function (err) {console.warn("Error in getPlayersInfo: ", err)})
   }
 };
