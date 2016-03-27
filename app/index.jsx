@@ -5,7 +5,7 @@ import HelloWorld from './components/App.jsx';
 import routes from './config/routes.js';
 import RaisedButton from 'material-ui/lib/raised-button';
 
-var USER_DATA = {
+const USER_DATA = {
   name: 'Sean Hendricks',
   username: 'seathony',
   image: 'https://avatars3.githubusercontent.com/u/12072926?v=3&amp;s=460',
