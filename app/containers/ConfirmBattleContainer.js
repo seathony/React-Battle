@@ -7,12 +7,13 @@ export default class ConfirmBattleContainer extends React.Component {
     router: React.PropTypes.object.isRequired,
   };
 
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       isLoading: true,
       playersInfo: [],
     };
+    context.router;
   }
 
   componentDidMount() {
@@ -43,7 +44,7 @@ export default class ConfirmBattleContainer extends React.Component {
     return (
       <ConfirmBattle
         isLoading={this.state.isLoading}
-        onInitiateBattle={this.handleInitiateBattle}
+        onInitiateBattle={this.handleInitiateBattle.bind(this)}
         playersInfo={this.state.playersInfo} />
     );
   }
