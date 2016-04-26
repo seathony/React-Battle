@@ -19,10 +19,18 @@ const common = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },
+
   output: {
     path: PATHS.build,
     filename: 'bundle.js',
   },
+
+  externals: {
+    'cherrio': 'window',
+    'react/lib/ExecutionEnviroment': true,
+    'react/lib/ReactContext': true,
+  },
+
   module: {
     loaders: [
       {
@@ -31,7 +39,7 @@ const common = {
         loaders: ['style', 'css?modules', 'sass'],
 
         // Include accepts either a path or an array of paths.
-        include: [PATHS.app, __dirname, './node_modules/react-flexbox-grid'],
+        include: [PATHS.app, __dirname, '/node_modules'],
       },
 
     // Set up jsx. This accepts js too thanks to RegExp

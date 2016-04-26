@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "test": "mocha -w test/helpers/browser.js test/*.spec.js",
+    "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --display-error-details --display-cached --content-base ./"
   },
   "keywords": [],
   "author": "",
@@ -17,10 +19,14 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-survivejs-kanban": "^0.3.3",
     "css-loader": "^0.23.1",
+    "enzyme": "^2.2.0",
     "eslint": "^2.5.1",
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-react": "^4.2.3",
+    "jsdom": "^8.3.0",
+    "mocha": "^2.4.5",
     "node-sass": "^3.4.2",
+    "react-addons-test-utils": "^0.14.8",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.14",
